@@ -480,8 +480,8 @@
 				{name : "plank", materialArray : plankTexture, mesh : new THREE.InstancedMesh(blockBox, plankTexture, renderDistance * renderDistance * chunkSize * chunkSize * depth), count : 0, range : [], biomes : ["plains", "desert"]},
 			];
 			var blockTypes = ["grass", "dirt", "cobblestone", "oakLog", "oakLeaves", "sand", "water", "glass", "brick", "plank"];
-			var biomeSize = 1; // the higher this number, the larger the biomes get
-			var treeDensity = 1; 
+			var biomeSize = 1.1; // the higher this number, the larger the biomes get
+			var treeDensity = 5; 
 			function getBiome(n){
 				if(n < 0.2){
 					return "plains";
@@ -596,7 +596,7 @@
 										// TREES!
 										if(biome == "plains" && waterExistsHere == false){
 											// LOGS
-											if(parseFloat(treeNoise.toFixed(3)) == 0.001){
+											if(parseFloat(treeNoise.toFixed(3)) == 0.002){
 												if(d < 0 && d >= -8){
 													let logMatrix = new THREE.Matrix4().makeTranslation(
 														x * 5,
