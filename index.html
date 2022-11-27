@@ -200,7 +200,7 @@
 			var zoff = 0;
 			var inc = 0.05;
 			var amplitude = 30 + (Math.random() * 70);
-			var renderDistance = 46;
+			var renderDistance = 7;
 			var chunkSize = 10;
 			var depth = 5; // keeps track of the depth of the world (in terms of blocks)
 			var minWorldY = -250; // the minimum y coordinate of a block
@@ -666,7 +666,8 @@
 				backward : "down",
 				right : "right",
 				left : "left",
-				jump : " " // " " = space
+				jump : " ", // " " = space
+				placeBlock: "k"
 			};
 
 			var chunkMap = [];
@@ -1203,7 +1204,7 @@
 										var xoffAround = inc * (x + xInc) / 5;
 										var zoffAround = inc * (z + zInc) / 5;
 										var treeNoiseAround = noise.perlin2(xoffAround / treeDensity, zoffAround / treeDensity);
-										if(parseFloat(treeNoiseAround.toFixed(3)) == 0.001){
+										if(parseFloat(treeNoiseAround.toFixed(3)) == 0.002){
 											canPutLeaf = true;
 											break;
 										}
