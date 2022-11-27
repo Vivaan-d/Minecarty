@@ -55,7 +55,7 @@
   module.seed = function(seed) {
     if(seed > 0 && seed < 1) {
       // Scale the seed out
-      seed *= 65536;
+      seed *= 6553609;
     }
 
     seed = Math.floor(seed);
