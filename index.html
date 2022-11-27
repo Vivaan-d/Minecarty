@@ -200,7 +200,7 @@
 			var zoff = 0;
 			var inc = 0.05;
 			var amplitude = 30 + (Math.random() * 70);
-			var renderDistance = 4;
+			var renderDistance = 46;
 			var chunkSize = 10;
 			var depth = 5; // keeps track of the depth of the world (in terms of blocks)
 			var minWorldY = -250; // the minimum y coordinate of a block
@@ -662,12 +662,11 @@
 			var keys = [];
 			var canJump = true;
 			var controlOptions = {
-				forward : "w",
-				backward : "s",
-				right : "d",
-				left : "a",
-				jump : " ", // " " = space
-				placeBlock : "q" 
+				forward : "up",
+				backward : "down",
+				right : "right",
+				left : "left",
+				jump : " " // " " = space
 			};
 
 			var chunkMap = [];
@@ -747,7 +746,7 @@
 					raycaster.setFromCamera(pointer, camera);
 					var intersection;
 					var next = false;
-					var distance = Infinity;
+					var distance = 4;
 					var placedInWater = false;
 					for(var i = 0; i < blocks.length; i++){
 						var int = raycaster.intersectObject(blocks[i].mesh);
