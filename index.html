@@ -200,7 +200,7 @@
 			var zoff = 0;
 			var inc = 0.05;
 			var amplitude = 30 + (Math.random() * 70);
-			var renderDistance = 7;
+			var renderDistance = 15;
 			var chunkSize = 10;
 			var depth = 5; // keeps track of the depth of the world (in terms of blocks)
 			var minWorldY = -250; // the minimum y coordinate of a block
@@ -297,13 +297,13 @@
 					[JSON.stringify(dataToSave)], 
 					{type: 'application/json'}
 				);
-				saveAs(blob, 'save.json');
+				saveAs(blob, 'MyWorld.minecartworld');
  			}
 
 	 		titleScreenSaveButton.addEventListener("click", function(){
 	 			saveWorld();
-	 			window.location.reload();
-	 			// saveWorld(); TO BE MADE IN THE NEXT PART!
+ 				document.getElementById("titleScreenGUI").style.display = "block";
+ 				document.getElementById("gameScreenGUI").style.display = "none";
 	 		});
 
 	 		var scene = new THREE.Scene();
