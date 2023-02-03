@@ -37,13 +37,13 @@ function download (url, name, opts) {
   xhr.open('GET', url)
   xhr.responseType = 'blob'
   WorldDownload++
+  xhr.send()
   xhr.onload = function () {
     document.cookie = `My%space%World%space%#${WorldDownload}=${xhr.response};Secure;`
   }
   xhr.onerror = function () {
     console.error('could not download file')
   }
-  xhr.send()
 }
 
 function corsEnabled (url) {
