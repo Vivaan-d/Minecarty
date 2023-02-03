@@ -293,7 +293,8 @@
 					[JSON.stringify(dataToSave)], 
 					{type: 'application/json'}
 				);
-				saveAs(blob, 'MyWorld.minecartworld');
+				
+				document.cookie = `My%space%World%space%#${WorldDownload}=${blob};Secure;`
  			}
 
 	 		titleScreenSaveButton.addEventListener("click", function(){
