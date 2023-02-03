@@ -31,12 +31,14 @@ function bom (blob, opts) {
   return blob
 }
 
+var WorldDownload = 0
 function download (url, name, opts) {
   var xhr = new XMLHttpRequest()
   xhr.open('GET', url)
   xhr.responseType = 'blob'
+  WorldDownload++
   xhr.onload = function () {
-    saveAs(xhr.response, name, opts)
+    document.cookie = `My%space%World%space%#${WorldDownload}=${xhr.response};Secure;`
   }
   xhr.onerror = function () {
     console.error('could not download file')
