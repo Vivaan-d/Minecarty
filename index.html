@@ -183,9 +183,9 @@
  		var titleScreenSaveButton = document.getElementById("titlescreensave");
 
 		 function prepairSingleplayerWorlds () {
-			for (let i = 0; i < localStorage.length; i++) {
-				let World = localStorage[i]
-				let WorldFile = localStorage[i].value
+			for (let i = 0; i < Array(localStorage).length; i++) {
+				let World = Array(localStorage)[i]
+				let WorldFile = Array(localStorage)[i].value
 				let div = document.createElement("div")
 				div.appendChild(document.querySelector("#singleplayerscreen"))
 				div.classList.add("Singleplayer World")
