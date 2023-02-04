@@ -192,9 +192,7 @@
 				div.setAttribute("world", i)
 				div.innerHTML = World
 				div.addEventListener("click", function () {
-
 					logFile(WorldFile);
-					
 				})
 			}
 		 };
@@ -341,7 +339,7 @@
 	 				}
 	 			};
 				
-				 localStorage.setItem(Prompt("World Name?"), JSON.stringify(dataToSave));
+				 localStorage.setItem(prompt("World Name?"), JSON.stringify(dataToSave));
  			}
 
 	 		titleScreenSaveButton.addEventListener("click", function(){
