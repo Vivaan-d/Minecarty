@@ -355,8 +355,8 @@
  				} else {
 					localStorage.setItem(WorldName, JSON.stringify(dataToSave));
 					alert(`Saving world "${WorldName}"`)
-				}
-
+				};
+			}
 	 		titleScreenSaveButton.addEventListener("click", function(){
 	 			saveWorld();
 				document.location.reload();
@@ -455,12 +455,12 @@
 				new THREE.MeshBasicMaterial({map : loader.load("texture/grass/side.jpg")})
 			];
 			var dirtTexture = [
-				new THREE.MeshBasicMaterial({map : loader.load("texture/dirt/dirt.png")}),
-				new THREE.MeshBasicMaterial({map : loader.load("texture/dirt/dirt.png")}),
-				new THREE.MeshBasicMaterial({map : loader.load("texture/dirt/dirt.png")}),
-				new THREE.MeshBasicMaterial({map : loader.load("texture/dirt/dirt.png")}),
-				new THREE.MeshBasicMaterial({map : loader.load("texture/dirt/dirt.png")}),
-				new THREE.MeshBasicMaterial({map : loader.load("texture/dirt/dirt.png")})
+				new THREE.MeshBasicMaterial({map : loader.load("texture/dirt/dirt.jpg")}),
+				new THREE.MeshBasicMaterial({map : loader.load("texture/dirt/dirt.jpg")}),
+				new THREE.MeshBasicMaterial({map : loader.load("texture/dirt/dirt.jpg")}),
+				new THREE.MeshBasicMaterial({map : loader.load("texture/dirt/dirt.jpg")}),
+				new THREE.MeshBasicMaterial({map : loader.load("texture/dirt/dirt.jpg")}),
+				new THREE.MeshBasicMaterial({map : loader.load("texture/dirt/dirt.jpg")})
 			];
 			var cobblestoneTexture = [
 				new THREE.MeshBasicMaterial({map : loader.load("texture/cobblestone/cobblestone.png")}),
@@ -2025,7 +2025,7 @@
 			}
 
 			GameLoop();
- 		}
+ 		};
  	</script>
 </body>
 </html>
