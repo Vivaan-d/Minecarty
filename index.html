@@ -204,8 +204,8 @@
 			Options
 		</div>
 		Render Distance:
-		<input id="startingButtons RenderDistance">
-		<div id="ConfirmOptions startingButtons">Save Options</div>
+		<input id="startingButtons renderdistance">
+		<div id="confirmoptions startingButtons">Save Options</div>
 	</div>
 
 	<div id = "escapeScreenGUI">
@@ -219,8 +219,8 @@
 
 		var optionsScreen = document.getElementById("optionsscreen");
 		var optionsButton = document.getElementById("options");
-		var saveOptions = document.getElementById("ConfirmOptions");
-		var RenderDistanceInput = document.getElementById("RenderDistance");
+		var saveOptions = document.getElementById("confirmoptions");
+		var RenderDistanceInput = document.getElementById("renderdistance");
 		var newGameButton = document.getElementById("newgame");
  		var singleplayerButton = document.getElementById("singleplayer");
  		var titleScreenSaveButton = document.getElementById("titlescreensave");
@@ -265,7 +265,7 @@
 			game("load");
 		}
 
-		var renderDistance = 8;
+		var renderDistanceTest = 8;
  		function game(newOrLoad){
 
  			var worldGen = Math.random();
@@ -276,6 +276,7 @@
 			var xoff = 0;
 			var zoff = 0;
 			var inc = 0.05;
+			var renderDistance = renderDistanceTest
 			var amplitude = 70 + (Math.random() * 70);
 			var chunkSize = 10;
 			var depth = 5; // keeps track of the depth of the world (in terms of blocks)
@@ -2055,7 +2056,7 @@
 		});
 		saveOptions.addEventListener("click", function () {
 			optionsScreen.style.display = "none"
-			renderDistance = RenderDistanceInput.value
+			renderDistanceTest = RenderDistanceInput.value
 		});
  	</script>
 </body>
