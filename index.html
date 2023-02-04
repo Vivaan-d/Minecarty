@@ -106,7 +106,7 @@
 			background-size: 75px;
 			display: none;
 		}
-		#singleplayerscreen{
+		#singleplayerheading{
 			background: url(texture/grass/top.jpg);
 			top: 0;
 			left: 0;
@@ -147,7 +147,8 @@
 		<img src = "titleScreen/minegrass.gif" class = "titleScreen">
 		<img src = "titleScreen/minevillage.gif" class = "titleScreen">
 
-		<button id = "newgame" class = "startingButtons" style = "top : 40%; z-index: 10000;">Singleplayer</button>
+		<!-- <button id = "newgame" class = "startingButtons" style = "top : 40%; z-index: 10000;">Create New World</button> -->
+		<button id = "singleplayer" class = "startingButtons" style = "top : 40%; z-index: 10000;">Singleplayer</button>
 		<button id = "loadgame" class = "startingButtons" style = "top : 55%">Upload Singleplayer World</button>
 		<button id = "options" class = "startingButtons" style = "top : 70%">Options (WIP)</button>
 		<input type="file" style="width:100%;height:100%;position: fixed;top:0; color: white; display: none" id="inputFile" accept=".minecartworld">
@@ -162,14 +163,15 @@
 
 	<div id = "escapeScreenGUI">
 		<div id = "escapeScreen"></div>
-		<button id = "options2" class = "escapeButtons" style = "top : 30%">Options (WIP)</button>
+		<button id = "options2" class = "escapeButtons" style = "top : 30%">Options (COMING SOON)</button>
 		<button id = "options2" class = "escapeButtons" style = "top : 30%">Back To Game</button>
 		<button id = "titlescreensave" class = "escapeButtons" style = "top : 45%">Save and Quit to Title</button>
 	</div>
 
  	<script type="text/javascript">
 
- 		var newGameButton = document.getElementById("newgame");
+		var newGameButton = document.getElementById("newgame");
+ 		var singleplayerButton = document.getElementById("singleplayer");
  		var loadGameButton = document.getElementById("loadgame");
  		var titleScreenSaveButton = document.getElementById("titlescreensave");
 
@@ -189,6 +191,9 @@
 
  		newGameButton.addEventListener("click", function(){
  			game("new");
+		});
+ 		singleplayerButton.addEventListener("click", function(){
+ 			document.querySelector("#singleplayerscreen").style.display = "block"
 		});
 
  		var inputFile = document.getElementById("inputFile");
