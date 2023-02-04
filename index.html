@@ -353,8 +353,8 @@
 					dataToSave.WorldName = promptworldname
 				 	localStorage.setItem(promptworldname, JSON.stringify(dataToSave));
  				} else {
+					dataToSave.WorldName = WorldName
 					alert(`Saving world "${WorldName}"`)
-					dataToSave.WorldName = promptworldname
 					localStorage.setItem(WorldName, JSON.stringify(dataToSave));
 				};
 			}
