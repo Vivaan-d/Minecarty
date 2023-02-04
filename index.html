@@ -266,7 +266,6 @@
 			game("load");
 		}
 
-		var renderDistanceTest = 8;
  		function game(newOrLoad){
 
  			var worldGen = Math.random();
@@ -277,7 +276,7 @@
 			var xoff = 0;
 			var zoff = 0;
 			var inc = 0.05;
-			var renderDistance = renderDistanceTest
+			var renderDistance = 8
 			var amplitude = 70 + (Math.random() * 70);
 			var chunkSize = 10;
 			var depth = 5; // keeps track of the depth of the world (in terms of blocks)
