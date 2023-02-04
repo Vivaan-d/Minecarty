@@ -348,7 +348,7 @@
 	 					destroyed : brokenBlocks
 	 				}
 	 			};
-				if (newOrLoad = "new"){
+				if (newOrLoad == "new"){
 					var promptworldname = prompt("World Name?")
 					dataToSave.WorldName = promptworldname
 				 	localStorage.setItem(promptworldname, JSON.stringify(dataToSave));
@@ -359,7 +359,7 @@
 			}
 	 		titleScreenSaveButton.addEventListener("click", function(){
 	 			saveWorld();
-				//document.location.reload();
+				document.location.reload();
 	 		});
 
 	 		var scene = new THREE.Scene();
