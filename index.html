@@ -253,7 +253,7 @@
 			var zoff = 0;
 			var inc = 0.05;
 			var amplitude = 30 + (Math.random() * 70);
-			var renderDistance = 6;
+			var renderDistance = 32;
 			var chunkSize = 10;
 			var depth = 5; // keeps track of the depth of the world (in terms of blocks)
 			var minWorldY = -250; // the minimum y coordinate of a block
@@ -364,8 +364,7 @@
 	 		});
 
 	 		var scene = new THREE.Scene();
-	 		scene.background = new THREE.Color(0x00ffff);
-	 		scene.fog = new THREE.Fog(0x00ffff, 10, 650);
+	 		scene.background = new THREE.Color(0x87ceeb);
 			var renderer = new THREE.WebGLRenderer();
 			renderer.setSize(window.innerWidth, window.innerHeight);
 			document.body.appendChild(renderer.domElement);
