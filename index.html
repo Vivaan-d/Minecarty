@@ -133,6 +133,30 @@
 			margin-top: 20px;
 			font-size: 20px;
 		}
+		#optionsheading{
+			top: 0;
+			left: 0;
+			width: 100%;
+			height: 15%;
+			position:relative;
+			z-index: 1000001;
+			color:white;
+			font-size: 20px;
+			padding-top: 20px;
+			text-align: center;
+			box-shadow: 0px 20px 2px 1px rgba(0, 0, 0, .6);
+		}
+		#optionsscreen{
+			background: url(texture/dirt/dirt.jpg);
+			top: 0;
+			left: 0;
+			width: 100%;
+			height: 100%;
+			position:fixed;
+			z-index: 1000000;
+			background-size: 75px;
+			display: none;
+		}
 	</style>
 </head>
 <body>
@@ -166,7 +190,7 @@
 		<!-- <button id = "newgame" class = "startingButtons" style = "top : 40%; z-index: 10000;">Create New World</button> -->
 		<button id = "singleplayer" onclick="document.querySelector('#singleplayerscreen').style.display = 'block'; prepairSingleplayerWorlds()" class = "startingButtons" style = "top : 40%; z-index: 10000;">Singleplayer</button>
 		<button id = "loadgame" class = "startingButtons" style = "top : 55%">Upload Singleplayer World</button>
-		<button id = "options" class = "startingButtons" style = "top : 70%">Options (WIP)</button>
+		<button id = "options" class = "startingButtons" style = "top : 70%">Options</button>
 		<input type="file" style="width:100%;height:100%;position: fixed;top:0; color: white; display: none" id="inputFile" accept=".minecartworld">
 
 		<img src = "minecraftlogo.png" id = "startingLogo">
@@ -176,20 +200,32 @@
 			Singleplayer
 		</div>
 	</div>
+	<div id="optionsscreen">
+		<div id="optionsheading">
+			Options
+		</div>
+		Render Distance:
+		<input id="startingButtons RenderDistance">
+		<div id="ConfirmOptions startingButtons">Save Options</div>
+	</div>
 
 	<div id = "escapeScreenGUI">
 		<div id = "escapeScreen"></div>
-		<button id = "options2" class = "escapeButtons" style = "top : 30%">Options (COMING SOON)</button>
-		<button id = "options2" class = "escapeButtons" style = "top : 30%">Back To Game</button>
+		<button id = "options-esc" class = "escapeButtons" style = "top : 30%">Options</button>
+		<button id = "backtogame" class = "escapeButtons" style = "top : 30%">Back To Game</button>
 		<button id = "titlescreensave" class = "escapeButtons" style = "top : 45%">Save and Quit to Title</button>
 	</div>
 
  	<script type="text/javascript">
 
+		var optionsScreen = document.getElementById("optionsscreen");
+		var optionsButton = document.getElementById("options");
+		var saveOptions = document.getElementById("ConfirmOptions");
+		var RenderDistanceInput = document.getElementById("RenderDistance");
 		var newGameButton = document.getElementById("newgame");
  		var singleplayerButton = document.getElementById("singleplayer");
- 		var loadGameButton = document.getElementById("loadgame");
  		var titleScreenSaveButton = document.getElementById("titlescreensave");
+
 
 		 function prepairSingleplayerWorlds () {
 			for (let i = 0; i < localStorage.length; i++) {
@@ -223,25 +259,14 @@
  			game("new");
 		});
 
- 		var inputFile = document.getElementById("inputFile");
-		loadGameButton.addEventListener("click", function(){
- 			inputFile.style.display = "block";
-		});
-
 		var loadedData;
-		inputFile.addEventListener("change", function(){
-			loadedData = inputFile.files[0];
-
-			const reader = new FileReader();
-			reader.onload = logFile;
-			reader.readAsText(loadedData);
-		});
 		function logFile(file){
 			let json = JSON.parse(file);
 			loadedData = json;
 			game("load");
 		}
 
+		var renderDistance = 8;
  		function game(newOrLoad){
 
  			var worldGen = Math.random();
@@ -252,8 +277,7 @@
 			var xoff = 0;
 			var zoff = 0;
 			var inc = 0.05;
-			var amplitude = 10 + (Math.random() * 70);
-			var renderDistance = 12;
+			var amplitude = 70 + (Math.random() * 70);
 			var chunkSize = 10;
 			var depth = 5; // keeps track of the depth of the world (in terms of blocks)
 			var minWorldY = -250; // the minimum y coordinate of a block
@@ -288,6 +312,7 @@
  			// GUI removal and additions
  			document.getElementById("titleScreenGUI").remove();
  			document.getElementById("singleplayerscreen").remove();
+ 			document.getElementById("multiplayerscreen").remove();
  			document.getElementById("gameScreenGUI").style.display = "block";
 
 	 		// Hotbar
@@ -2026,6 +2051,13 @@
 
 			GameLoop();
  		};
+		optionsButton.addEventListener("click", function () {
+			optionsScreen.style.display = "block"
+		});
+		saveOptions.addEventListener("click", function () {
+			optionsScreen.style.display = "none"
+			renderDistance = RenderDistanceInput.value
+		});
  	</script>
 </body>
 </html>
