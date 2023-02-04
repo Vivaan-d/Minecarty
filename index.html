@@ -353,9 +353,9 @@
 					dataToSave.WorldName = promptworldname
 				 	localStorage.setItem(promptworldname, JSON.stringify(dataToSave));
  				} else {
-					localStorage.setItem(WorldName, JSON.stringify(dataToSave));
-					dataToSave.WorldName = promptworldname
 					alert(`Saving world "${WorldName}"`)
+					dataToSave.WorldName = promptworldname
+					localStorage.setItem(WorldName, JSON.stringify(dataToSave));
 				};
 			}
 	 		titleScreenSaveButton.addEventListener("click", function(){
