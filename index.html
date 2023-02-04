@@ -234,9 +234,8 @@
 			reader.onload = logFile;
 			reader.readAsText(loadedData);
 		});
-		function logFile(event){
-			let str = event.target.result;
-			let json = JSON.parse(str);
+		function logFile(file){
+			let json = JSON.parse(file);
 			loadedData = json;
 			game("load");
 		}
