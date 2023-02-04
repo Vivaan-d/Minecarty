@@ -192,7 +192,7 @@
  		var titleScreenSaveButton = document.getElementById("titlescreensave");
 
 		 function prepairSingleplayerWorlds () {
-			for (let i = 0; i < Array(localStorage).length; i++) {
+			for (let i = 0; i < localStorage.length; i++) {
 				let World = localStorage.key(i)
 				let WorldFile = localStorage.getItem(localStorage.key(i))
 				let div = document.createElement("div")
