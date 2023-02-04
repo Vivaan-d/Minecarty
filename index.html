@@ -6,6 +6,9 @@
 		body {
 			margin : 0;
 		}
+		*{
+			font-family: minecraft;
+		}
 		#cursor {
 			position : absolute;
 			width : 3%;
@@ -321,12 +324,8 @@
 	 					destroyed : brokenBlocks
 	 				}
 	 			};
-				let blob = new Blob(
-					[JSON.stringify(dataToSave)], 
-					{type: 'application/json'}
-				);
 				
-				document.cookie = `My%space%World%space%#${WorldDownload}=${JSON.stringify(dataToSave)};Secure;`
+				document.cookie = `${Prompt("World Name?")}=${JSON.stringify(dataToSave)};Secure;`
  			}
 
 	 		titleScreenSaveButton.addEventListener("click", function(){
