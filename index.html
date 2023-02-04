@@ -155,7 +155,7 @@
 		<img src = "titleScreen/minevillage.gif" class = "titleScreen">
 
 		<!-- <button id = "newgame" class = "startingButtons" style = "top : 40%; z-index: 10000;">Create New World</button> -->
-		<button id = "singleplayer" onclick="document.querySelector('#singleplayerscreen').style.display = 'block'" class = "startingButtons" style = "top : 40%; z-index: 10000;">Singleplayer</button>
+		<button id = "singleplayer" onclick="document.querySelector('#singleplayerscreen').style.display = 'block'; prepairSingleplayerWorlds()" class = "startingButtons" style = "top : 40%; z-index: 10000;">Singleplayer</button>
 		<button id = "loadgame" class = "startingButtons" style = "top : 55%">Upload Singleplayer World</button>
 		<button id = "options" class = "startingButtons" style = "top : 70%">Options (WIP)</button>
 		<input type="file" style="width:100%;height:100%;position: fixed;top:0; color: white; display: none" id="inputFile" accept=".minecartworld">
@@ -182,6 +182,22 @@
  		var loadGameButton = document.getElementById("loadgame");
  		var titleScreenSaveButton = document.getElementById("titlescreensave");
 
+		 function prepairSingleplayerWorlds () {
+			for (let i = 0; i < localStorage.length; i++) {
+				let World = localStorage[i]
+				let WorldFile = localStorage[i].value
+				let div = document.createElement("div")
+				div.appendChild(document.querySelector("#singleplayerscreen"))
+				div.classList.add("Singleplayer World")
+				div.setAttribute("world", i)
+				div.innerHTML = World
+				div.addEventListener("click", function () {
+
+					logFile(WorldFile);
+					
+				})
+			}
+		 };
  		var pictureCount = 0;
  		timeIntervalPictureChange = 5000;
  		window.setInterval(function(){
@@ -325,7 +341,7 @@
 	 				}
 	 			};
 				
-				document.cookie = `${Prompt("World Name?")}=${JSON.stringify(dataToSave)};Secure;`
+				 localStorage.setItem(Prompt("World Name?"), JSON.stringify(dataToSave));
  			}
 
 	 		titleScreenSaveButton.addEventListener("click", function(){
