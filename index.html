@@ -247,7 +247,7 @@
  			var worldGen = Math.random();
 	 		var biomeGen = Math.random();
 	 		var treesGen = Math.random();
-
+			var WorldName;
 	 		var chunks = [];
 			var xoff = 0;
 			var zoff = 0;
@@ -264,7 +264,7 @@
 
 			var placedBlocks = [];
 			var brokenBlocks = [];
-
+			
  			if(newOrLoad == "load"){
  				worldGen = loadedData.seeds.world;
 				biomeGen = loadedData.seeds.biome;
@@ -281,6 +281,7 @@
 				placedBlocks = loadedData.editedBlocks.placed;
 				brokenBlocks = loadedData.editedBlocks.destroyed;
 				console.log(placedBlocks, brokenBlocks);
+				WorldName = loadedData.WorldName
  			}
 
  			timeIntervalPictureChange = Infinity;
@@ -347,9 +348,14 @@
 	 					destroyed : brokenBlocks
 	 				}
 	 			};
-				
-				 localStorage.setItem(prompt("World Name?"), JSON.stringify(dataToSave));
- 			}
+				if (newOrLoad = "new"){
+					var promptworldname = prompt("World Name?")
+					dataToSave.WorldName = promptworldname
+				 	localStorage.setItem(promptworldname, JSON.stringify(dataToSave));
+ 				} else {
+					localStorage.setItem(WorldName, JSON.stringify(dataToSave));
+					alert(`Saving world "${WorldName}"`)
+				}
 
 	 		titleScreenSaveButton.addEventListener("click", function(){
 	 			saveWorld();
