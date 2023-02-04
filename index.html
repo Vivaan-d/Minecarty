@@ -185,7 +185,7 @@
 		 function prepairSingleplayerWorlds () {
 			for (let i = 0; i < Array(localStorage).length; i++) {
 				let World = localStorage.key(i)
-				let WorldFile = localStorage.key(i).value
+				let WorldFile = localStorage.getItem(localStorage.key(i))
 				let div = document.createElement("div")
 				document.querySelector("#singleplayerscreen").appendChild(div)
 				div.classList.add("singleplayerworld")
