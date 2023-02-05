@@ -158,6 +158,9 @@
 			background-size: 75px;
 			display: none;
 		}
+		#newgame{
+			position:fixed;left:40%;width: 20%;bottom:20px;
+		}
 	</style>
 </head>
 <body>
@@ -188,7 +191,6 @@
 		<img src = "titleScreen/minegrass.gif" class = "titleScreen">
 		<img src = "titleScreen/minevillage.gif" class = "titleScreen">
 
-		<!-- <button id = "newgame" class = "startingButtons" style = "top : 40%; z-index: 10000;">Create New World</button> -->
 		<button id = "singleplayer" onclick="document.querySelector('#singleplayerscreen').style.display = 'block'; prepairSingleplayerWorlds()" class = "startingButtons" style = "top : 40%; z-index: 10000;">Singleplayer</button>
 		<button id = "options" class = "startingButtons" style = "top : 70%">Options</button>
 		<input type="file" style="width:100%;height:100%;position: fixed;top:0; color: white; display: none" id="inputFile" accept=".minecartworld">
@@ -199,6 +201,7 @@
 		<div id="singleplayerheading">
 			Singleplayer
 		</div>
+		<button id = "newgame" class = "startingButtons" style = "top : 40%; z-index: 10000;">Create New World</button>
 	</div>
 	<div id="optionsscreen">
 		<div id="optionsheading">
