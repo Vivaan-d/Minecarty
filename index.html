@@ -582,16 +582,16 @@
 			// Setting Opacity of water
 			for(var i = 0; i < waterTexture.length; i++){
 				if(i == 2 || i == 3){ // top and bottom
-					blocks[waterIndex].materialArray[i].transparent = true;
-					blocks[waterIndex].materialArray[i].opacity = 0.5;
+					blocks[waterIndex].material[i].transparent = true;
+					blocks[waterIndex].material[i].opacity = 0.5;
 				} else { // sides
-					blocks[waterIndex].materialArray[i].transparent = true;
-					blocks[waterIndex].materialArray[i].opacity = 0.1;
+					blocks[waterIndex].material[i].transparent = true;
+					blocks[waterIndex].material[i].opacity = 0.1;
 				}
 			}
 			// Making glass transparent
 			for(var i = 0; i < glassTexture.length; i++){
-				blocks[glassIndex].materialArray[i].transparent = true;
+				blocks[glassIndex].material[i].transparent = true;
 			}
 
 			for(var i = 0; i < renderDistance; i++){
@@ -892,7 +892,7 @@
 											chunks[identifyChunk(x, z)].splice(i, 1);
 											brokenBlocks.push(new Block(x, y, z, false, "water"));
 											scene.remove(blocks[waterIndex].mesh);
-											blocks[waterIndex].mesh = new THREE.InstancedMesh(blockBox, blocks[waterIndex].materialArray, (renderDistance * renderDistance * chunkSize * chunkSize * depth) - brokenBlocks.length);
+											blocks[waterIndex].mesh = new THREE.InstancedMesh(blockBox, blocks[waterIndex].material, (renderDistance * renderDistance * chunkSize * chunkSize * depth) - brokenBlocks.length);
 											blocks[waterIndex].count = 0;
 											break;
 										}
@@ -902,7 +902,7 @@
 								// Updated chunks of placed block
 								var index = blockTypes.indexOf(blockToBePlaced);
 								scene.remove(blocks[index].mesh);
-								blocks[index].mesh = new THREE.InstancedMesh(blockBox, blocks[index].materialArray, (renderDistance * renderDistance * chunkSize * chunkSize * depth) + placedBlocks.length);
+								blocks[index].mesh = new THREE.InstancedMesh(blockBox, blocks[index].material || blocks[index].materialArray, (renderDistance * renderDistance * chunkSize * chunkSize * depth) + placedBlocks.length);
 								blocks[index].count = 0;
 
 								for(var i = 0; i < chunks.length; i++){
