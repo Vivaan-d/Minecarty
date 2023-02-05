@@ -793,12 +793,8 @@
 		    	}
 		    }
 			document.addEventListener("keydown", function(e){
-				if(e.key == "arrowUp") {
-			        var elapsed = new Date().getTime();
-			        if(elapsed - start <= 300){
-			        	sprint = true;
-			        }
-			        start = elapsed;
+				if(e.key == "shift") {
+					sprint = true
 			    }
 
 			    // Selecting a slot
