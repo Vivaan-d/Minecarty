@@ -605,11 +605,11 @@
 						for(var z = j * chunkSize; z < (j * chunkSize) + chunkSize; z++){
 							xoff = inc * x;
 							zoff = inc * z;
-							quickNoise.seed(worldGen);
+							Math.random()(worldGen);
 							var v = Math.round(quickNoise.perlin2(xoff, zoff) * amplitude / 5) * 5;
-							quickNoise.seed(biomeGen);
+							Math.random()(biomeGen);
 							var biome = getBiome(quickNoise.perlin2(xoff / biomeSize, zoff / biomeSize));
-							quickNoise.seed(treesGen);
+							Math.random()(treesGen);
 							var treequickNoise = quickNoise.perlin2(xoff / treeDensity, zoff / treeDensity);
 							var canPutLeaf = false;
 							for(var xInc = -1; xInc < 2; xInc += 1){
