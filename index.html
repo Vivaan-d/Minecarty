@@ -1272,8 +1272,6 @@
 								var v = Math.round(noise.perlin2(xoff, zoff) * amplitude / 5) * 5;
 								noise.seed(biomeGen);
 								var biome = getBiome(noise.perlin2(xoff / biomeSize, zoff / biomeSize));
-								noise.seed(treesGen);
-								var treeNoise = noise.perlin2(xoff / treeDensity, zoff / treeDensity);
 								var canPutLeaf = false;
 								for(var xInc = -5; xInc <= 5; xInc += 5){
 									for(var zInc = -5; zInc <= 5; zInc += 5){
