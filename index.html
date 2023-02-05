@@ -817,7 +817,7 @@
 
 				if(e.key == controlOptions.jump && canJump == true && controls.isLocked){
 					ySpeed = -1;
-					canJump = false;
+					canJump = true;
 				}
 				if(e.key == controlOptions.placeBlock){
 					const raycaster = new THREE.Raycaster();
