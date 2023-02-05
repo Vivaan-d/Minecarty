@@ -205,7 +205,7 @@
 			Options
 		</div>
 		Render Distance:
-		<input id="startingButtons renderdistance">
+		<input id="startingButtons GRenderDistance">
 		<div id="confirmoptions startingButtons">Save Options</div>
 	</div>
 
@@ -221,7 +221,7 @@
 		var optionsScreen = document.getElementById("optionsscreen");
 		var optionsButton = document.getElementById("options");
 		var saveOptions = document.getElementById("confirmoptions");
-		var RenderDistanceInput = document.getElementById("renderdistance");
+		var GRenderDistanceInput = document.getElementById("GRenderDistance");
 		var newGameButton = document.getElementById("newgame");
  		var singleplayerButton = document.getElementById("singleplayer");
  		var titleScreenSaveButton = document.getElementById("titlescreensave");
@@ -265,7 +265,7 @@
 			loadedData = json;
 			game("load");
 		}
-		var GRenderDistance = 8
+		var GGRenderDistance = 8
  		function game(newOrLoad){
 
  			var worldGen = Math.random();
@@ -276,14 +276,13 @@
 			var xoff = 0;
 			var zoff = 0;
 			var inc = 0.05;
-			var renderDistance = GRenderDistance
 			var amplitude = 70 + (Math.random() * 70);
 			var chunkSize = 10;
 			var depth = 5; // keeps track of the depth of the world (in terms of blocks)
 			var minWorldY = -250; // the minimum y coordinate of a block
 			var camera = new THREE.PerspectiveCamera(75, window.innerWidth / window.innerHeight, 0.1, 1000);
-			camera.position.x = renderDistance * chunkSize / 2 * 5;
-			camera.position.z = renderDistance * chunkSize / 2 * 5;
+			camera.position.x = GRenderDistance * chunkSize / 2 * 5;
+			camera.position.z = GRenderDistance * chunkSize / 2 * 5;
 			camera.position.y = 50;
 
 			var placedBlocks = [];
@@ -553,16 +552,16 @@
 			];
 
 			var blocks = [
-				{name : "grass", materialArray : grassTexture, mesh : new THREE.InstancedMesh(blockBox, grassTexture, renderDistance * renderDistance * chunkSize * chunkSize * depth), count : 0, range : [0], biomes : ["plains"]},
-				{name : "dirt", materialArray : dirtTexture, mesh : new THREE.InstancedMesh(blockBox, dirtTexture, renderDistance * renderDistance * chunkSize * chunkSize * depth), count : 0, range : [1, 2], biomes : ["plains"]},
-				{name : "cobblestone", materialArray : cobblestoneTexture, mesh : new THREE.InstancedMesh(blockBox, cobblestoneTexture, renderDistance * renderDistance * chunkSize * chunkSize * depth), count : 0, range : [3, 4], biomes : ["plains", "desert"]},
-				{name : "oakLog", materialArray : oakLogTexture, mesh : new THREE.InstancedMesh(blockBox, oakLogTexture, renderDistance * renderDistance * chunkSize * chunkSize * depth), count : 0, range : [], biomes : ["plains"]},
-				{name : "oakLeaves", materialArray : oakLeavesTexture, mesh : new THREE.InstancedMesh(blockBox, oakLeavesTexture, renderDistance * renderDistance * chunkSize * chunkSize * depth), count : 0, range : [], biomes : ["plains"]},
-				{name : "sand", materialArray : sandTexture, mesh : new THREE.InstancedMesh(blockBox, sandTexture, renderDistance * renderDistance * chunkSize * chunkSize * depth), count : 0, range : [0, 1, 2], biomes : ["desert"]},
-				{name : "water", materialArray : waterTexture, mesh : new THREE.InstancedMesh(blockBox, waterTexture, renderDistance * renderDistance * chunkSize * chunkSize * depth), count : 0, range : [], biomes : ["plains", "desert"]},
-				{name : "glass", materialArray : glassTexture, mesh : new THREE.InstancedMesh(blockBox, glassTexture, renderDistance * renderDistance * chunkSize * chunkSize * depth), count : 0, range : [], biomes : ["plains", "desert"]},
-				{name : "brick", materialArray : brickTexture, mesh : new THREE.InstancedMesh(blockBox, brickTexture, renderDistance * renderDistance * chunkSize * chunkSize * depth), count : 0, range : [], biomes : ["plains", "desert"]},
-				{name : "plank", materialArray : plankTexture, mesh : new THREE.InstancedMesh(blockBox, plankTexture, renderDistance * renderDistance * chunkSize * chunkSize * depth), count : 0, range : [], biomes : ["plains", "desert"]},
+				{name : "grass", materialArray : grassTexture, mesh : new THREE.InstancedMesh(blockBox, grassTexture, GRenderDistance * GRenderDistance * chunkSize * chunkSize * depth), count : 0, range : [0], biomes : ["plains"]},
+				{name : "dirt", materialArray : dirtTexture, mesh : new THREE.InstancedMesh(blockBox, dirtTexture, GRenderDistance * GRenderDistance * chunkSize * chunkSize * depth), count : 0, range : [1, 2], biomes : ["plains"]},
+				{name : "cobblestone", materialArray : cobblestoneTexture, mesh : new THREE.InstancedMesh(blockBox, cobblestoneTexture, GRenderDistance * GRenderDistance * chunkSize * chunkSize * depth), count : 0, range : [3, 4], biomes : ["plains", "desert"]},
+				{name : "oakLog", materialArray : oakLogTexture, mesh : new THREE.InstancedMesh(blockBox, oakLogTexture, GRenderDistance * GRenderDistance * chunkSize * chunkSize * depth), count : 0, range : [], biomes : ["plains"]},
+				{name : "oakLeaves", materialArray : oakLeavesTexture, mesh : new THREE.InstancedMesh(blockBox, oakLeavesTexture, GRenderDistance * GRenderDistance * chunkSize * chunkSize * depth), count : 0, range : [], biomes : ["plains"]},
+				{name : "sand", materialArray : sandTexture, mesh : new THREE.InstancedMesh(blockBox, sandTexture, GRenderDistance * GRenderDistance * chunkSize * chunkSize * depth), count : 0, range : [0, 1, 2], biomes : ["desert"]},
+				{name : "water", materialArray : waterTexture, mesh : new THREE.InstancedMesh(blockBox, waterTexture, GRenderDistance * GRenderDistance * chunkSize * chunkSize * depth), count : 0, range : [], biomes : ["plains", "desert"]},
+				{name : "glass", materialArray : glassTexture, mesh : new THREE.InstancedMesh(blockBox, glassTexture, GRenderDistance * GRenderDistance * chunkSize * chunkSize * depth), count : 0, range : [], biomes : ["plains", "desert"]},
+				{name : "brick", materialArray : brickTexture, mesh : new THREE.InstancedMesh(blockBox, brickTexture, GRenderDistance * GRenderDistance * chunkSize * chunkSize * depth), count : 0, range : [], biomes : ["plains", "desert"]},
+				{name : "plank", materialArray : plankTexture, mesh : new THREE.InstancedMesh(blockBox, plankTexture, GRenderDistance * GRenderDistance * chunkSize * chunkSize * depth), count : 0, range : [], biomes : ["plains", "desert"]},
 			];
 			var blockTypes = ["grass", "dirt", "cobblestone", "oakLog", "oakLeaves", "sand", "water", "glass", "brick", "plank"];
 			var biomeSize = 1.1; // the higher this number, the larger the biomes get
@@ -596,8 +595,8 @@
 				blocks[glassIndex].materialArray[i].transparent = true;
 			}
 
-			for(var i = 0; i < renderDistance; i++){
-				for(j = 0; j < renderDistance; j++){
+			for(var i = 0; i < GRenderDistance; i++){
+				for(j = 0; j < GRenderDistance; j++){
 					var chunk = [];
 					for(var x = i * chunkSize; x < (i * chunkSize) + chunkSize; x++){
 						for(var z = j * chunkSize; z < (j * chunkSize) + chunkSize; z++){
@@ -752,8 +751,8 @@
 			};
 
 			var chunkMap = [];
-			for(var x = 0; x < renderDistance; x++){
-				for(var z = 0; z < renderDistance; z++){
+			for(var x = 0; x < GRenderDistance; x++){
+				for(var z = 0; z < GRenderDistance; z++){
 					chunkMap.push({x : x, z : z});
 				}
 			}
@@ -898,7 +897,7 @@
 											chunks[identifyChunk(x, z)].splice(i, 1);
 											brokenBlocks.push(new Block(x, y, z, false, "water"));
 											scene.remove(blocks[waterIndex].mesh);
-											blocks[waterIndex].mesh = new THREE.InstancedMesh(blockBox, blocks[waterIndex].materialArray, (renderDistance * renderDistance * chunkSize * chunkSize * depth) - brokenBlocks.length);
+											blocks[waterIndex].mesh = new THREE.InstancedMesh(blockBox, blocks[waterIndex].materialArray, (GRenderDistance * GRenderDistance * chunkSize * chunkSize * depth) - brokenBlocks.length);
 											blocks[waterIndex].count = 0;
 											break;
 										}
@@ -908,7 +907,7 @@
 								// Updated chunks of placed block
 								var index = blockTypes.indexOf(blockToBePlaced);
 								scene.remove(blocks[index].mesh);
-								blocks[index].mesh = new THREE.InstancedMesh(blockBox, blocks[index].materialArray, (renderDistance * renderDistance * chunkSize * chunkSize * depth) + placedBlocks.length);
+								blocks[index].mesh = new THREE.InstancedMesh(blockBox, blocks[index].materialArray, (GRenderDistance * GRenderDistance * chunkSize * chunkSize * depth) + placedBlocks.length);
 								blocks[index].count = 0;
 
 								for(var i = 0; i < chunks.length; i++){
@@ -1040,7 +1039,7 @@
 						// update chunks, array.splice(index, 1);
 						var index = blockTypes.indexOf(blockToBeDestroyed);
 						scene.remove(blocks[index].mesh);
-						blocks[index].mesh = new THREE.InstancedMesh(blockBox, blocks[index].materialArray, (renderDistance * renderDistance * chunkSize * chunkSize * depth) + placedBlocks.length);
+						blocks[index].mesh = new THREE.InstancedMesh(blockBox, blocks[index].materialArray, (GRenderDistance * GRenderDistance * chunkSize * chunkSize * depth) + placedBlocks.length);
 						blocks[index].count = 0;
 
 						for(var i = 0; i < chunks.length; i++){
@@ -1243,7 +1242,7 @@
 				}
 
 				// INFINITE TERRAIN GENERATION PART!
-				var worldSize = chunkSize * renderDistance * 5;
+				var worldSize = chunkSize * GRenderDistance * 5;
 				var ratio = 0.4;
 				if(camera.position.z < lowestZBlock() + (worldSize * ratio)){ // 20 is 4 blocks
 					/*
@@ -1255,7 +1254,7 @@
 
 					var newChunks = [];
 					for(var i = 0; i < chunks.length; i++){
-						if((i + 1) % renderDistance != 0){
+						if((i + 1) % GRenderDistance != 0){
 							newChunks.push(chunks[i]);
 						}
 					}
@@ -1264,7 +1263,7 @@
 					var lowestX = lowestXBlock();
 					var lowestZ = lowestZBlock();
 
-					for(var i = 0; i < renderDistance; i++){
+					for(var i = 0; i < GRenderDistance; i++){
 						var chunk = [];
 						for(var x = lowestX + (i * chunkSize * 5); x < lowestX + (i * chunkSize * 5) + (chunkSize * 5); x = x + 5){
 							for(var z = lowestZ - (chunkSize * 5); z < lowestZ; z = z + 5){
@@ -1375,14 +1374,14 @@
 								}
 							}
 						}
-						newChunks.splice(i * renderDistance, 0, chunk);
+						newChunks.splice(i * GRenderDistance, 0, chunk);
 					}
 
 					chunks = newChunks;
 
 					for(var i = 0; i < blocks.length; i++){
 						scene.remove(blocks[i].mesh);
-						blocks[i].mesh = new THREE.InstancedMesh(blockBox, blocks[i].materialArray, (renderDistance * renderDistance * chunkSize * chunkSize * depth) + placedBlocks.length);
+						blocks[i].mesh = new THREE.InstancedMesh(blockBox, blocks[i].materialArray, (GRenderDistance * GRenderDistance * chunkSize * chunkSize * depth) + placedBlocks.length);
 						blocks[i].count = 0;
 					}
 
@@ -1418,7 +1417,7 @@
 
 					var newChunks = [];
 					for(var i = 0; i < chunks.length; i++){
-						if(i % renderDistance != 0){
+						if(i % GRenderDistance != 0){
 							newChunks.push(chunks[i]);
 						}
 					}
@@ -1426,7 +1425,7 @@
 					// add blocks
 					var lowestX = lowestXBlock();
 					var highestZ = highestZBlock();
-					for(var i = 0; i < renderDistance; i++){
+					for(var i = 0; i < GRenderDistance; i++){
 						var chunk = [];
 						for(var x = lowestX + (i * chunkSize * 5); x < lowestX + (i * chunkSize * 5) + (chunkSize * 5); x = x + 5){
 							for(var z = highestZ + 5; z < (highestZ + 5) + (chunkSize * 5); z = z + 5){
@@ -1537,14 +1536,14 @@
 								}
 							}
 						}
-						newChunks.splice(((i + 1) * renderDistance) - 1, 0, chunk);
+						newChunks.splice(((i + 1) * GRenderDistance) - 1, 0, chunk);
 					}
 
 					chunks = newChunks;
 
 					for(var i = 0; i < blocks.length; i++){
 						scene.remove(blocks[i].mesh);
-						blocks[i].mesh = new THREE.InstancedMesh(blockBox, blocks[i].materialArray, (renderDistance * renderDistance * chunkSize * chunkSize * depth) + placedBlocks.length);
+						blocks[i].mesh = new THREE.InstancedMesh(blockBox, blocks[i].materialArray, (GRenderDistance * GRenderDistance * chunkSize * chunkSize * depth) + placedBlocks.length);
 						blocks[i].count = 0;
 					}
 
@@ -1579,7 +1578,7 @@
 					*/
 
 					var newChunks = [];
-					for(var i = renderDistance; i < chunks.length; i++){
+					for(var i = GRenderDistance; i < chunks.length; i++){
 						newChunks.push(chunks[i]);
 					}
 
@@ -1587,7 +1586,7 @@
 					var highestX = highestXBlock();
 					var lowestZ = lowestZBlock();
 
-					for(var i = 0; i < renderDistance; i++){
+					for(var i = 0; i < GRenderDistance; i++){
 						var chunk = [];
 						for(var z = lowestZ + (i * chunkSize * 5); z < lowestZ + (i * chunkSize * 5) + (chunkSize * 5); z = z + 5){
 							for(var x = highestX + 5; x < highestX + 5 + (chunkSize * 5); x = x + 5){
@@ -1698,14 +1697,14 @@
 								}
 							}
 						}
-						newChunks.splice(chunks.length - (renderDistance - i), 0, chunk);
+						newChunks.splice(chunks.length - (GRenderDistance - i), 0, chunk);
 					}
 
 					chunks = newChunks;
 
 					for(var i = 0; i < blocks.length; i++){
 						scene.remove(blocks[i].mesh);
-						blocks[i].mesh = new THREE.InstancedMesh(blockBox, blocks[i].materialArray, (renderDistance * renderDistance * chunkSize * chunkSize * depth) + placedBlocks.length);
+						blocks[i].mesh = new THREE.InstancedMesh(blockBox, blocks[i].materialArray, (GRenderDistance * GRenderDistance * chunkSize * chunkSize * depth) + placedBlocks.length);
 						blocks[i].count = 0;
 					}
 
@@ -1740,14 +1739,14 @@
 					*/
 
 					var newChunks = [];
-					for(var i = 0; i < chunks.length - renderDistance; i++){
+					for(var i = 0; i < chunks.length - GRenderDistance; i++){
 						newChunks.push(chunks[i]);
 					}
 
 					// add blocks
 					var lowestX = lowestXBlock();
 					var lowestZ = lowestZBlock();
-					for(var i = 0; i < renderDistance; i++){
+					for(var i = 0; i < GRenderDistance; i++){
 						var chunk = [];
 						for(var z = lowestZ + (i * chunkSize * 5); z < lowestZ + (i * chunkSize * 5) + (chunkSize * 5); z = z + 5){
 							for(var x = lowestX - (chunkSize * 5); x < lowestX; x = x + 5){
@@ -1865,7 +1864,7 @@
 
 					for(var i = 0; i < blocks.length; i++){
 						scene.remove(blocks[i].mesh);
-						blocks[i].mesh = new THREE.InstancedMesh(blockBox, blocks[i].materialArray, (renderDistance * renderDistance * chunkSize * chunkSize * depth) + placedBlocks.length);
+						blocks[i].mesh = new THREE.InstancedMesh(blockBox, blocks[i].materialArray, (GRenderDistance * GRenderDistance * chunkSize * chunkSize * depth) + placedBlocks.length);
 						blocks[i].count = 0;
 					}
 
