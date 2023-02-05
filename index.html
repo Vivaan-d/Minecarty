@@ -902,7 +902,7 @@
 								// Updated chunks of placed block
 								var index = blockTypes.indexOf(blockToBePlaced);
 								scene.remove(blocks[index].mesh);
-								blocks[index].mesh = new THREE.InstancedMesh(blockBox, blocks[index].material || blocks[index].materialArray, (renderDistance * renderDistance * chunkSize * chunkSize * depth) + placedBlocks.length);
+								blocks[index].mesh = new THREE.InstancedMesh(blockBox, blocks[index].material, (renderDistance * renderDistance * chunkSize * chunkSize * depth) + placedBlocks.length);
 								blocks[index].count = 0;
 
 								for(var i = 0; i < chunks.length; i++){
