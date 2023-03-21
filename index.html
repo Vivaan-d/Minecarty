@@ -2043,9 +2043,9 @@
 
 			function GameLoop(){
 				requestAnimationFrame(GameLoop);
-				update();
 				render();
 			}
+			setInterval(update(), 50);
 
 			GameLoop();
  		};
