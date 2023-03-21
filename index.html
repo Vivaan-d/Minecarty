@@ -280,7 +280,7 @@
 			var zoff = 0;
 			var inc = 0.05;
 			var renderDistance = 10
-			var amplitude = 200 + (Math.random() * 200);
+			var amplitude = 50 + (Math.random() * 50);
 			var chunkSize = 10;
 			var depth = 8; // keeps track of the depth of the world (in terms of blocks)
 			var minWorldY = -2000; // the minimum y coordinate of a block
@@ -567,7 +567,7 @@
 				{name : "plank", materialArray : plankTexture, mesh : new THREE.InstancedMesh(blockBox, plankTexture, renderDistance * renderDistance * chunkSize * chunkSize * depth), count : 0, range : [], biomes : ["plains", "desert"]},
 			];
 			var blockTypes = ["grass", "dirt", "cobblestone", "oakLog", "oakLeaves", "sand", "water", "glass", "brick", "plank"];
-			var biomeSize = 1.1; // the higher this number, the larger the biomes get
+			var biomeSize = 1; // the higher this number, the larger the biomes get
 			var treeDensity = 5; 
 			function getBiome(n){
 				if(n < 0.2){
