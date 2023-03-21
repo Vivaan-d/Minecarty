@@ -244,7 +244,7 @@
 				})
 			}
 		 };
-		var update
+		var update;
  		var pictureCount = 0;
  		timeIntervalPictureChange = 5000;
  		window.setInterval(function(){
@@ -1891,6 +1891,8 @@
 				}
 			}
 
+			setInterval(update(), 50);
+			
 			function lowestXBlock(){
 				var xPosArray = [];
 				for(var i = 0; i < chunks.length; i++){
@@ -1949,6 +1951,7 @@
 			pointer.y = -1 * (0.5) * 2 + 1;
 
 			var plane;
+			setInterval(update(), 50);
 			function render(){
 				raycaster.setFromCamera(pointer, camera);
 				var intersection;
@@ -2049,7 +2052,6 @@
 
 			GameLoop();
  		};
-		setInterval(update(), 50);
  	</script>
 </body>
 </html>
