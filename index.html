@@ -244,6 +244,7 @@
 				})
 			}
 		 };
+		var update
  		var pictureCount = 0;
  		timeIntervalPictureChange = 5000;
  		window.setInterval(function(){
@@ -1126,7 +1127,7 @@
 			var forback = 0; // 1 = forward, -1 = backward
 			var rightleft = 0; // 1 = right, -1 = left
 			var sprintSpeedInc = 1.6; // 30% faster than walking
-			function update(){	
+			update = () => {	
 				player.updatePosition();
 
 				if(controls.isLocked){
