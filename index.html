@@ -244,7 +244,6 @@
 				})
 			}
 		 };
-		var update;
  		var pictureCount = 0;
  		timeIntervalPictureChange = 5000;
  		window.setInterval(function(){
@@ -280,7 +279,7 @@
 			var xoff = 0;
 			var zoff = 0;
 			var inc = 0.05;
-			var renderDistance = 10
+			var renderDistance = 8
 			var amplitude = 50 + (Math.random() * 50);
 			var chunkSize = 10;
 			var depth = 8; // keeps track of the depth of the world (in terms of blocks)
@@ -1127,7 +1126,7 @@
 			var forback = 0; // 1 = forward, -1 = backward
 			var rightleft = 0; // 1 = right, -1 = left
 			var sprintSpeedInc = 1.6; // 30% faster than walking
-			update = () => {	
+			function update(){	
 				player.updatePosition();
 
 				if(controls.isLocked){
@@ -1891,8 +1890,6 @@
 				}
 			}
 
-			setInterval(update(), 50);
-			
 			function lowestXBlock(){
 				var xPosArray = [];
 				for(var i = 0; i < chunks.length; i++){
@@ -1951,7 +1948,6 @@
 			pointer.y = -1 * (0.5) * 2 + 1;
 
 			var plane;
-			setInterval(update(), 50);
 			function render(){
 				raycaster.setFromCamera(pointer, camera);
 				var intersection;
@@ -2047,6 +2043,7 @@
 
 			function GameLoop(){
 				requestAnimationFrame(GameLoop);
+				update();
 				render();
 			}
 
