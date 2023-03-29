@@ -271,9 +271,9 @@
 
  		function game(newOrLoad){
 
- 			var worldGen = Math.random() * 0;
-	 		var biomeGen = Math.random() * 0;
-	 		var treesGen = Math.random() * 10;
+ 			var worldGen = Math.random();
+	 		var biomeGen = Math.random();
+	 		var treesGen = Math.random();
 			var WorldName;
 	 		var chunks = [];
 			var xoff = 0;
@@ -336,15 +336,10 @@
 
 	 		function animate(){
 	 			stats.begin();
-
-	 			// monitored code goes between this called functions
-
 	 			stats.end();
-
-	 			requestAnimationFrame(animate);
 	 		}
 
-	 		requestAnimationFrame(animate);
+	 		setInterval(() => {requestAnimationFrame(animate)}, 25);
 
 	 		function saveWorld(){
 	 			/*
