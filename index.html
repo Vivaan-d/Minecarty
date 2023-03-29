@@ -214,6 +214,7 @@
 
 	<div id = "escapeScreenGUI">
 		<div id = "escapeScreen"></div>
+		<div class="fps">?</div><div class="biome">None?</div>
 		<button id = "options-esc" class = "escapeButtons" style = "top : 30%">Options</button>
 		<button id = "backtogame" class = "escapeButtons" style = "top : 30%">Back To Game</button>
 		<button id = "titlescreensave" class = "escapeButtons" style = "top : 45%">Save and Quit to Title</button>
@@ -329,15 +330,16 @@
 	 		cursor.style.left = ((0.5 * window.innerWidth) - (0.5 * cursor.width)).toString() + "px";
 	 		cursor.style.top = ((0.5 * window.innerHeight) - (0.5 * cursor.height)).toString() + "px";
 
-	 		// Performance Stats
+	 		// Stats/Debug
 			var Stats = {
-				fps: 0
+				fps: 0,
+				biome: "Unknown"
 			}
 	 		function animate(){
 				Stats.fps += 1
 	 		}
 
-			setInterval(() => {console.log(Stats.fps);Stats.fps = 0;}, 1000)
+			setInterval(() => {/* fps */console.log(Stats.fps);Stats.fps = 0;document.querySelector(".fps").innerHTML = Stats.fps;/* biome */console.log(Stats.biome);Stats.biome = 0;document.querySelector(".biome").innerHTML = Stats.biome}, 1000)
 	 		setInterval(() => {requestAnimationFrame(animate)}, 10);
 
 	 		function saveWorld(){
@@ -562,7 +564,7 @@
 			];
 			var blockTypes = ["grass", "dirt", "cobblestone", "oakLog", "oakLeaves", "sand", "water", "glass", "brick", "plank"];
 			var biomeSize = 1; // the higher this number, the larger the biomes get
-			var treeDensity = 5; 
+			var treeDensity = 1; 
 			function getBiome(n){
 				if(n < 0.2){
 					return "plains";
