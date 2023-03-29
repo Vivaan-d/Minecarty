@@ -468,7 +468,7 @@
 				new THREE.MeshBasicMaterial({map : loader.load("texture/texture.png")}),
 			];
 			*/
-			var blockBox = new THREE.BoxBufferGeometry(4, 4, 4);
+			var blockBox = new THREE.BoxBufferGeometry(5, 5, 5);
 			var grassTexture = [
 				new THREE.MeshBasicMaterial({map : loader.load("texture/grass/side.jpg")}),
 				new THREE.MeshBasicMaterial({map : loader.load("texture/grass/side.jpg")}),
@@ -583,10 +583,10 @@
 			for(var i = 0; i < waterTexture.length; i++){
 				if(i == 2 || i == 3){ // top and bottom
 					blocks[waterIndex].materialArray[i].transparent = true;
-					blocks[waterIndex].materialArray[i].opacity = 0.7;
+					blocks[waterIndex].materialArray[i].opacity = 0.5;
 				} else { // sides
 					blocks[waterIndex].materialArray[i].transparent = true;
-					blocks[waterIndex].materialArray[i].opacity = 0.4;
+					blocks[waterIndex].materialArray[i].opacity = 0.2;
 				}
 			}
 			// Making glass transparent
@@ -624,7 +624,7 @@
 							}
 
 							var waterExistsHere = false;
-							var h = 5;
+							var h = 5;/*
 							while(true){
 								var brokenWaterBlock = false;
 								for(var d = 0; d < brokenBlocks.length; d++){
@@ -647,7 +647,7 @@
 								} else {
 									break;
 								}
-							}
+							}*/
 
 							for(var d = -8; d < depth; d++){
 								// Try to find a broken block in that position
