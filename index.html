@@ -330,15 +330,14 @@
 	 		cursor.style.top = ((0.5 * window.innerHeight) - (0.5 * cursor.height)).toString() + "px";
 
 	 		// Performance Stats
-	 		var stats = new Stats();
-	 		stats.showPanel(0); // 0:fps, 1:ms, 2:mb, 3+:custom
-	 		document.body.appendChild(stats.dom);
-
+			var Stats = {
+				fps: 0
+			}
 	 		function animate(){
-	 			stats.begin();
-	 			stats.end();
+				Stats.fps += 1
 	 		}
 
+			setInterval(() => {console.log(Stats.fps);Stats.fps = 0;}, 1000)
 	 		setInterval(() => {requestAnimationFrame(animate)}, 10);
 
 	 		function saveWorld(){
