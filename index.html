@@ -272,7 +272,7 @@
  		function game(newOrLoad){
 
  			var worldGen = Math.random() * 0;
-	 		var biomeGen = Math.random() * 3;
+	 		var biomeGen = Math.random() * 0;
 	 		var treesGen = Math.random() * 0;
 			var WorldName;
 	 		var chunks = [];
@@ -282,7 +282,7 @@
 			var renderDistance = 2
 			var amplitude = 50 + (Math.random() * 50);
 			var chunkSize = 10;
-			var depth = 8; // keeps track of the depth of the world (in terms of blocks)
+			var depth = 10; // keeps track of the depth of the world (in terms of blocks)
 			var minWorldY = -2000; // the minimum y coordinate of a block
 			var camera = new THREE.PerspectiveCamera(75, window.innerWidth / window.innerHeight, 0.1, 1000);
 			camera.position.x = renderDistance * chunkSize / 2 * 5;
