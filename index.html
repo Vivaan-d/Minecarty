@@ -393,7 +393,6 @@
 			renderer.setSize(window.innerWidth, window.innerHeight);
 			document.body.appendChild(renderer.domElement);
 
-			/*
 			var groundBox = new THREE.BoxBufferGeometry(25, 1, 50);
 			var groundMesh = new THREE.MeshBasicMaterial({color : 0x00ff00});
 			var ground = new THREE.Mesh(groundBox, groundMesh);
@@ -405,7 +404,6 @@
 			var line = new THREE.LineSegments(edges, new THREE.LineBasicMaterial({color : 0x000000}));
 			scene.add(line);
 			line.position.y = -5;
-			*/
 
 			var faces = [
 				{ // left
@@ -624,7 +622,7 @@
 							}
 
 							var waterExistsHere = false;
-							var h = 5;/*
+							var h = 5;
 							while(true){
 								var brokenWaterBlock = false;
 								for(var d = 0; d < brokenBlocks.length; d++){
@@ -647,7 +645,7 @@
 								} else {
 									break;
 								}
-							}*/
+							}
 
 							for(var d = -8; d < depth; d++){
 								// Try to find a broken block in that position
@@ -746,7 +744,7 @@
 				right : "ArrowRight",
 				left : "ArrowLeft",
 				jump : " ", // " " = space
-				placeBlock: "k"
+				placeBlock: "rightClick"
 			};
 
 			var chunkMap = [];
@@ -1062,7 +1060,7 @@
 				keys = [];
 			});
 
-			var movingSpeed = 0.5;
+			var movingSpeed = 0.65;
 			var ySpeed = 0;
 			var acc = 0.065;
 
