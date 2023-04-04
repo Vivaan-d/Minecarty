@@ -1258,8 +1258,8 @@
 
 					for(var i = 0; i < renderDistance; i++){
 						var chunk = [];
-						for(var x = lowestX + (i * chunkSize * 5); x < lowestX + (i * chunkSize * 5) + (chunkSize * 5); x = x + 5){
-							for(var z = lowestZ - (chunkSize * 5); z < lowestZ; z = z + 5){
+						for(var x = lowestX + (i * chunkSize * 1); x < lowestX + (i * chunkSize * 1) + (chunkSize * 1); x = x + 1){
+							for(var z = lowestZ - (chunkSize * 1); z < lowestZ; z = z + 1){
 								xoff = inc * x / 5;
 								zoff = inc * z / 5;
 								noise.seed(worldGen);
@@ -1346,7 +1346,7 @@
 												}
 												// LEAVES
 												if(e <= -6 && canPutLeaf){
-													if(parseFloat(treeNoise.toFixed(3)) != 0.001){
+													if(parseFloat(treeNoise.toFixed(3)) != 0.01){
 														let leafMatrix = new THREE.Matrix4().makeTranslation(
 															x,
 															v - (e * 5),
