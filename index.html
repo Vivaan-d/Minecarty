@@ -581,10 +581,10 @@
 			for(var i = 0; i < waterTexture.length; i++){
 				if(i == 2 || i == 3){ // top and bottom
 					blocks[waterIndex].materialArray[i].transparent = true;
-					blocks[waterIndex].materialArray[i].opacity = 0.5;
+					blocks[waterIndex].materialArray[i].opacity = 1;
 				} else { // sides
 					blocks[waterIndex].materialArray[i].transparent = true;
-					blocks[waterIndex].materialArray[i].opacity = 0.2;
+					blocks[waterIndex].materialArray[i].opacity = 1;
 				}
 			}
 			// Making glass transparent
