@@ -808,7 +808,7 @@
 
 				keys.push(e.key);
 
-				if(e.key == controlOptions.jump && canJump == true && controls.isLocked){
+				if(e.key == controlOptions.jump /* fly lol && canJump == true  */ && controls.isLocked){
 					ySpeed = -1;
 					canJump = false;
 				}
