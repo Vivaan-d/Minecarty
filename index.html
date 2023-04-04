@@ -577,16 +577,16 @@
 			var glassIndex = blockTypes.indexOf("glass");
 			var waterLevel = 0;
 
-			// Setting Opacity of water
+			/*/ Setting Opacity of water - WATERTRANSTESTe
 			for(var i = 0; i < waterTexture.length; i++){
 				if(i == 2 || i == 3){ // top and bottom
 					blocks[waterIndex].materialArray[i].transparent = true;
-					blocks[waterIndex].materialArray[i].opacity = 1;
+					blocks[waterIndex].materialArray[i].opacity = 0.5;
 				} else { // sides
 					blocks[waterIndex].materialArray[i].transparent = true;
-					blocks[waterIndex].materialArray[i].opacity = 1;
+					blocks[waterIndex].materialArray[i].opacity = 0.2;
 				}
-			}
+			} */
 			// Making glass transparent
 			for(var i = 0; i < glassTexture.length; i++){
 				blocks[glassIndex].materialArray[i].transparent = true;
