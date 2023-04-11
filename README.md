@@ -1,4 +1,5 @@
 # Minecarty
+[![CodeFactor](https://www.codefactor.io/repository/github/vivaan-d/minecarty/badge)](https://www.codefactor.io/repository/github/vivaan-d/minecarty)
 Minecraft in Three.js but with actual effort put into it
 
 Minecarty is hosted with Netlify at https://mc.minecart-network.ml
